@@ -9,9 +9,27 @@
 #Property.create(capacity: 2, address: "amsterdam", summary: "a nice room", price_per_night: 150, type: "private room", number_of_rooms: 1)
 
 Property.create(
-  capacity: 2,
-  address: "London",
-  summary: "good room!",
-  price_per_night: 300,
-  number_of_rooms: 1
-)
+    capacity: 2,
+    address: "London",
+    summary: "good room!",
+    price_per_night: 300,
+    number_of_rooms: 1
+  )
+
+Property.create(
+    capacity: 2,
+    address: "Amsterldam",
+    summary: "nice room!",
+    price_per_night: 200,
+    number_of_rooms: 1
+  )
+
+Property.create(
+    capacity: 2,
+    address: "Madrid",
+    summary: "amazing room!",
+    price_per_night: 100,
+    number_of_rooms: 1
+  )
+
+
