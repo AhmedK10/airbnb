@@ -33,11 +33,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_095647) do
     t.string "address"
     t.text "summary"
     t.integer "price_per_night"
-    t.string "type"
     t.bigint "user_id"
     t.integer "number_of_rooms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "single_room", default: true
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
