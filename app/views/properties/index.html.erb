@@ -1,7 +1,17 @@
-<ul>
+<div class="grid">
   <% @properties.each do |property| %>
-    <li><%= property.address %>
-    <%= property.capacity %>
-    <%= property.price_per_night %></li>
+    <div class="card">
+      <%= link_to property_path(property) do %>
+        <div class="card-img" style="background-image: url(<%= asset_path('Amsterdam_3.jpg') %>)"></div>
+      <% end %>
+      <div class="card-infos">
+        <div>
+          <h3><%= property.title %></h3>
+          <%= property.address %>
+          <%= property.capacity %>
+        </div>
+        <h3>€ <%= property.price_per_night %></h3>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>

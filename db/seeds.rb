@@ -12,41 +12,40 @@ User.destroy_all
 tom = User.create!(email: "tom@gmail.com", password: "secret")
 ben = User.create!(email: "ben@gmail.com", password: "secret")
 property_tom_london = Property.create!(
+
+Property.create(
+  title: "Tower Bridge",
   capacity: 2,
   address: "London",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 1,
-  user: tom,
-  title: "prop1"
+  number_of_rooms: 1
 )
 
-property_tom_amsterdam = Property.create!(
+Booking.create!(
+  start_date: Date.today - 20,
+  end_date: Date.today - 10,
+  total_price: 100,
+  number_of_guests: 2,
+  user: ben,
+  property: Property.last,
+  status: "confirmed"
+)
+
+Property.create(
+  title: "Dam Square",
   capacity: 2,
   address: "Amsterdam",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 1,
-  user: tom,
-  title: "prop2"
+  number_of_rooms: 1
 )
 
-property_ben_paris = Property.create!(
-  capacity: 3,
-  address: "Paris",
+Property.create(
+  title: "Il Colosseo",
+  capacity: 5,
+  address: "Rome",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 1,
-  user: ben,
-  title: "prop3"
-)
-
-Favorite.create!(
-  user: ben,
-  property: property_tom_london
-)
-
-Favorite.create!(
-  user: ben,
-  property: property_tom_amsterdam
+  number_of_rooms: 1
 )
