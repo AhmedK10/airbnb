@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Property.delete_all
+
+Property.create(
+  capacity: 3,
+  address: "London",
+  summary: "good room!",
+  price_per_night: 300,
+  number_of_rooms: 1
+)
+
+Property.create(
+  capacity: 2,
+  address: "Amsterdam",
+  summary: "good room!",
+  price_per_night: 300,
+  number_of_rooms: 4
+)
+
+Property.create(
+  capacity: 5,
+  address: "Rome",
+  summary: "good room!",
+  price_per_night: 300,
+  number_of_rooms: 3
+)
