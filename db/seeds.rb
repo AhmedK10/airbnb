@@ -6,30 +6,47 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
-Property.delete_all
-
-Property.create(
+Favorite.destroy_all
+Property.destroy_all
+User.destroy_all
+tom = User.create!(email: "tom@gmail.com", password: "secret")
+ben = User.create!(email: "ben@gmail.com", password: "secret")
+property_tom_london = Property.create!(
   capacity: 2,
   address: "London",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 1
+  number_of_rooms: 1,
+  user: tom,
+  title: "prop1"
 )
 
-Property.create(
+property_tom_amsterdam = Property.create!(
   capacity: 2,
   address: "Amsterdam",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 4
+  number_of_rooms: 1,
+  user: tom,
+  title: "prop2"
 )
 
-Property.create(
-  capacity: 5,
-  address: "Rome",
+property_ben_paris = Property.create!(
+  capacity: 3,
+  address: "Paris",
   summary: "good room!",
   price_per_night: 300,
-  number_of_rooms: 3
+  number_of_rooms: 1,
+  user: ben,
+  title: "prop3"
 )
 
+Favorite.create!(
+  user: ben,
+  property: property_tom_london
+)
+
+Favorite.create!(
+  user: ben,
+  property: property_tom_amsterdam
+)
