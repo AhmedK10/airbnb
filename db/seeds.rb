@@ -10,6 +10,7 @@
 Property.delete_all
 
 Property.create(
+  title: "Tower Bridge",
   capacity: 2,
   address: "London",
   summary: "good room!",
@@ -18,6 +19,7 @@ Property.create(
 )
 
 Property.create(
+  title: "Dam Square",
   capacity: 2,
   address: "Amsterdam",
   summary: "good room!",
@@ -26,10 +28,10 @@ Property.create(
 )
 
 Property.create(
+  title: "Il Colosseo",
   capacity: 5,
   address: "Rome",
   summary: "good room!",
   price_per_night: 300,
   number_of_rooms: 3
 )
-
