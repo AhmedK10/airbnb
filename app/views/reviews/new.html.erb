@@ -1,3 +1,6 @@
+<div class="container">
+
+
 <h1>Review</h1>
 
 <%= simple_form_for [@booking, @review] do |f| %>
@@ -5,3 +8,4 @@
     <%= f.input :rating, collection: 1..5 %>
     <%= f.submit "Create Review" %>
 <% end %>
+</div>
