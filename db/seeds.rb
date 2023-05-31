@@ -11,7 +11,6 @@ Property.destroy_all
 User.destroy_all
 tom = User.create!(email: "tom@gmail.com", password: "secret")
 ben = User.create!(email: "ben@gmail.com", password: "secret")
-property_tom_london = Property.create!(
 
 Property.create(
     capacity: 2,
@@ -36,16 +35,6 @@ Property.create(
     price_per_night: 100,
     number_of_rooms: 1
   )
-
-
-=======
-  title: "Tower Bridge",
-  capacity: 2,
-  address: "London",
-  summary: "good room!",
-  price_per_night: 300,
-  number_of_rooms: 1
-)
 
 Booking.create!(
   start_date: Date.today - 20,
@@ -74,4 +63,3 @@ Property.create(
   price_per_night: 300,
   number_of_rooms: 1
 )
-
