@@ -14,6 +14,31 @@ ben = User.create!(email: "ben@gmail.com", password: "secret")
 property_tom_london = Property.create!(
 
 Property.create(
+    capacity: 2,
+    address: "London",
+    summary: "good room!",
+    price_per_night: 300,
+    number_of_rooms: 1
+  )
+
+Property.create(
+    capacity: 2,
+    address: "Amsterldam",
+    summary: "nice room!",
+    price_per_night: 200,
+    number_of_rooms: 1
+  )
+
+Property.create(
+    capacity: 2,
+    address: "Madrid",
+    summary: "amazing room!",
+    price_per_night: 100,
+    number_of_rooms: 1
+  )
+
+
+=======
   title: "Tower Bridge",
   capacity: 2,
   address: "London",
@@ -49,3 +74,4 @@ Property.create(
   price_per_night: 300,
   number_of_rooms: 1
 )
+
