@@ -1,0 +1,7 @@
+<h1>Your Favorites</h1>
+
+<% @favorites.each do |favorite| %>
+  <ul>
+    <li><%= favorite.property.title %></li>
+  </ul>
+<%end%>
