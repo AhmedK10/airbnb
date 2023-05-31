@@ -25,9 +25,8 @@ class BookingsController < ApplicationController
   privete
 
   def booking_params
-    requier.params(:booking).permit(:start_date, :end_date, :number_of_guests, )
+    requier.params(:booking).permit(:start_date, :end_date, :number_of_guests)
   end
-
 
   def set_booking
     @booking = Booking.find(params[:id])
