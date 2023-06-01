@@ -1,11 +1,9 @@
-<div class="container" style="font-family: Arial, sans-serif;">
+<div class="container">
+	<h1 style="font-family: 'Boston', sans-serif; font-size: 40px; font-weight: 700; line-height: 50px;">Review</h1>
 
-
-<h1>Review</h1>
-
-<%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :rating, collection: 1..5 %>
-    <%= f.submit "Create Review" %>
-<% end %>
+	<%= simple_form_for [@booking, @review] do |f| %>
+		<%= f.input :comment, input_html: {class:"rounded w-50"} %>
+		<%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+		<%= f.button :submit, "Submit", class: "button"%>
+	<% end %>
 </div>
