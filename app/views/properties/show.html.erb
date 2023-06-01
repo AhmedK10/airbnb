@@ -25,7 +25,7 @@
       <h2><strong>Located in </strong> <%= @property.address %></h2>
       <h2><strong>Price per Night: </strong>€ <%= @property.price_per_night %></h2>
       <h2><strong>Maximum Capacity: </strong> <%= @property.capacity %></h2>
-      <h2><%= @property.number_of_rooms %> rooms</h2>
+      <%#= @property.number_of_rooms %>
       <br>
       <div class = "d-flex">
         <%= link_to "Book",  new_property_booking_path(@property), class: "btn button btn-primary me-3"%>
@@ -44,7 +44,7 @@
 
 
   <hr>
-
+  <br>
   <div class = "summary">
     <p> Next to our small nature campsite is a beautiful holiday home surrounded by nature.
     Jurjen has made the cottage all by herself and made sure that you can completely relax. <%#= @property.summary %></p>
@@ -65,31 +65,33 @@
 
   <div class="review-card my-2">
     <%= image_tag asset_path('prof-pic1.jpg')%>
-    <div class="review-product-infos">
+    <div class="review-card-infos">
       <h2>Tom</h2>
       <p>A very comfortable property and I would highly recommend.</p>
-      <div class = "d-flex">
-        <p>5</p>
-        <i class="fa-solid fa-star"></i>
+      <div class=" d-flex justify-content-start prop-info">
+        <p class="review-icon ms-1"> 4 <i class="fa-solid fa-star"></i></p>
       </div>
     </div>
   </div>
 
   <div class="review-card my-2">
     <%= image_tag asset_path('prof-pic2.jpg')%>
-    <div class="review-product-infos">
+    <div class="review-card-infos">
       <h2>Alex</h2>
       <p>A very comfortable property and I would highly recommend.</p>
-      <p>5 stars</p>
+      <div class=" d-flex justify-content-start prop-info">
+        <p class="review-icon ms-1"> 5 <i class="fa-solid fa-star"></i></p>
+      </div>
     </div>
   </div>
 
   <div class="review-card my-2">
     <%= image_tag asset_path('prof-pic3.jpg')%>
-    <div class="review-product-infos">
+    <div class="review-card-infos">
       <h2>Ben</h2>
       <p>A very comfortable property and I would highly recommend.</p>
-      <p>5 stars</p>
-    </div>
+      <div class=" d-flex justify-content-start prop-info">
+        <p class="review-icon ms-1"> 3 <i class="fa-solid fa-star"></i></p>
+      </div>
   </div>
 </div>
