@@ -1,0 +1,19 @@
+.header {
+  background-image: url('banner_desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: Boston, sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    height: 80px;
+    color: white;
+    text-align: center;
+  }
+}
