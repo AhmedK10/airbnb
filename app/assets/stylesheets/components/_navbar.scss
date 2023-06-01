@@ -32,3 +32,26 @@
 .smaller-input {
   width: 100px;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.nav-link:hover {
+  color: $secondary;
+  font-weight: bold;
+}
+
+.dropdown-menu .dropdown-item.action-link:hover {
+  color: white;
+  font-weight: bolder;
+  background-color: $secondary;
+}
+
+.btn-white:hover {
+  color: white;
+}

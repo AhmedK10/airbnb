@@ -1,0 +1,14 @@
+/* styles.css */
+
+.custom-footer {
+  background-color: $primary;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0; /* Remove left margin */
+  margin-right: 0; /* Remove right margin */
+}
+
+.container-fluid {
+  padding-left: 0; /* Remove left padding */
+  padding-right: 0; /* Remove right padding */
+}

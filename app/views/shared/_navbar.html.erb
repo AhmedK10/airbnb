@@ -7,17 +7,23 @@
       </div>
     <% end %>
 
-    <div class="row justify-content-center">
-      <div class="col-sm-12 my-6">
-        <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination" %>
-            <%= text_field_tag :min_price, params[:min_price], class: "form-control smaller-input", placeholder: "Min Price" %>
-            <%= text_field_tag :max_price, params[:max_price], class: "form-control smaller-input", placeholder: "Max Price" %>
-            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-
+<div class="row justify-content-center">
+  <div class="col-sm-12 my-6">
+    <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination", style: "margin-right: 10px;" %>
+      <%= select_tag :max_price,
+        options_for_select(
+          [["Max Price", "", disabled: true, selected: true]] +
+          [50, 150, 200, 250, 300, 350, 400, "> 400"].map { |price| ["#{price} €", price] },
+          params[:max_price]
+        ),
+        class: "form-control smaller-input",
+        style: "margin-right: 10px;"
+      %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary btn-white" %>
+    <% end %>
+  </div>
+</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,17 +32,17 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My Booking", "#", class: "nav-link" %>
+            <%= link_to "My booking", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add list", "#", class: "nav-link" %>
+            <%= link_to "My favorites", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Àbout us", "#", class: "dropdown-item action-link" %>
+              <%= link_to "Contact us", "#", class: "dropdown-item action-link" %>
+              <%= link_to "Log out", "#", class: "dropdown-item action-link", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>

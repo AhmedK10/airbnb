@@ -4,15 +4,30 @@
 </div>
 
 <div class="container">
-  <h3>Airbnb</h3>
-  <h2>Find the perfect place to stay</h2>
+  <div class="box">
+    <h2 class="top-destinations">Latest Top Destinations</h2>
+  </div>
+
+ <div class="destinations">
+    <%  %>
+  <div class="destination">
+
+  <div class="grid">
+  <% @destinations.each do |destination| %>
+    <div class="card">
+      <%= link_to property_path(destination) do %>
+        <div class="card-img" style="background-image: url(<%= asset_path('Amsterdam_3.jpg') %>)"></div>
+      <% end %>
+      <div class="card-infos">
+        <div>
+          <h3><%= destination.title %></h3>
+          <%= destination.address %>
+          <%= destination.capacity %>
+        </div>
+        <h3>€ <%= destination.price_per_night %></h3>
+      </div>
+    </div>
+  <% end %>
 </div>
 
-  <%# <div class="search-bar">
-    <%= form_tag properties_path, method: :get do %>
-      <%# <%=# text_field_tag :search, params[:search], placeholder: 'Search for a room' %>
-      <%# <%=# submit_tag 'Search' %>
-    <%# end %>
-  <%# </div> %>
-
-<%# <%= button_to 'See all properties', properties_path, method: :get %>
+</div>

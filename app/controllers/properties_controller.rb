@@ -3,15 +3,17 @@ class PropertiesController < ApplicationController
 
   def index
     @properties = Property.all
+    @properties = @properties.where("address ILIKE ?", "%#{params[:query]}%") if params[:query].present?
 
-    if params[:query]
-      @properties = @properties.where("address ILIKE ?", "%#{params[:query]}%")
-    end
+    return unless params[:max_price].present?
 
-    if params[:min_price].present? && params[:max_price].present?
-      min_price = params[:min_price].to_i
-      max_price = params[:max_price].to_i
-      @properties = @properties.where(price_per_night: min_price..max_price)
+    max_price = params[:max_price]
+
+    if max_price == "More than 400"
+      @properties = @properties.where("price_per_night > ?", 400)
+    else
+      max_price = max_price.to_i
+      @properties = @properties.where(price_per_night: 0..max_price)
     end
   end
 
