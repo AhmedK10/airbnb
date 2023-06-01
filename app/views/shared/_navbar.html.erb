@@ -10,12 +10,10 @@
     <div class="row justify-content-center">
       <div class="col-sm-12 my-6">
         <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Search destination"
-            %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination" %>
+            <%= text_field_tag :min_price, params[:min_price], class: "form-control smaller-input", placeholder: "Min Price" %>
+            <%= text_field_tag :max_price, params[:max_price], class: "form-control smaller-input", placeholder: "Max Price" %>
+            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
