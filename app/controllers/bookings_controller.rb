@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def new

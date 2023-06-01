@@ -1,12 +1,16 @@
-.card{
+.card {
   overflow: hidden;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.3)
+  }
 }
 
-.card-img{
+.card-img {
   height: 200px;
   width: 100%;
   background-size: cover;
@@ -34,4 +38,9 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.container-margin {
+  margin-left: 300px;
+  margin-right: 300px;
 }

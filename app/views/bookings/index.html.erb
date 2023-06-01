@@ -1,8 +1,36 @@
-<h1>Uppcoming booking</h1>
-<%= @booking.each do |b| %>
-  <%= "#{@property.title}" %>
-  <%= b.start_date %>
-  <%= b.end_date %>
-  <%= b.number_of_guests %>
-  <%= b.total_price %>
-<% end %>
+<div class="container">
+  <div class="">
+    <h1 class="d-flex justify-content-end mb-3 mt-5">Upcoming bookings</h1>
+    <% if !@bookings.empty? %>
+      <% @bookings.each do |b| %>
+        <%= link_to property_path(b.property), class:"text-decoration-none" do %>
+          <%# <div class="container"> %>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-12">
+                <div class="card mt-2">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= b.property.title %></h5>
+                    <p class="card-text"><%= b.property.address %></p>
+                  </div>
+                    <ul class="list-unstyled p-3">
+                      <li><%= b.start_date %></li>
+                      <li><%= b.end_date %></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          <%# </div> %>
+
+        <% end %>
+      <% end %>
+  </div>
+  <% else %>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h2>Travel more...</h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

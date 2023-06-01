@@ -8,6 +8,7 @@
 
 puts 'Cleaning database...'
 
+Booking.destroy_all
 Favorite.destroy_all
 Property.destroy_all
 # Booking.where(property: Property.last).destroy_all
@@ -109,13 +110,31 @@ Property.create(
   user: mark
 )
 
-# Booking.create!(
-#   start_date: Date.today - 20,
-#   end_date: Date.today - 10,
-#   number_of_guests: rand(1..5),
-#   user: alice,
-#   property: Property.last,
-#   status: "confirmed"
-# )
+Booking.create!(
+  start_date: Date.today - 20,
+  end_date: Date.today - 10,
+  number_of_guests: rand(1..5),
+  user: alice,
+  property: Property.last,
+  status: "confirmed"
+)
+
+Booking.create!(
+  start_date: Date.today - 2,
+  end_date: Date.today + 10,
+  number_of_guests: rand(1..5),
+  user: alice,
+  property: Property.first,
+  status: "confirmed"
+)
+
+Booking.create!(
+  start_date: Date.today + 20,
+  end_date: Date.today + 40,
+  number_of_guests: rand(1..5),
+  user: alice,
+  property: Property.last,
+  status: "confirmed"
+)
 
 puts 'users, properties, bookings...CREATED'
