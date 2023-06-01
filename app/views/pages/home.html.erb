@@ -1,15 +1,18 @@
-<div class="container">
-  <div>
-    <h3>Airbnb</h3>
-    <h2>Find the perfect place to stay</h2>
-  </div>
-
-  <div class="search-bar">
-    <%= form_tag properties_path, method: :get do %>
-      <%= text_field_tag :search, params[:search], placeholder: 'Search for a room' %>
-      <%= submit_tag 'Search' %>
-    <% end %>
-  </div>
+<div class="header">
+  <h1>Book your favorite place</h1>
+  <p>From a cottage in the countryside to a hip apartment in the middle of the city.</P>
 </div>
 
-<%= button_to 'See all properties', properties_path, method: :get %>
+<div class="container">
+  <h3>Airbnb</h3>
+  <h2>Find the perfect place to stay</h2>
+</div>
+
+  <%# <div class="search-bar">
+    <%= form_tag properties_path, method: :get do %>
+      <%# <%=# text_field_tag :search, params[:search], placeholder: 'Search for a room' %>
+      <%# <%=# submit_tag 'Search' %>
+    <%# end %>
+  <%# </div> %>
+
+<%# <%= button_to 'See all properties', properties_path, method: :get %>
