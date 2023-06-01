@@ -1,0 +1,26 @@
+<footer class="custom-footer">
+    <div class="row justify-content-between">
+      <div class="col-sm-4">
+        <h4>Search</h4>
+        <%= form_with url: properties_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination" %>
+          <%= submit_tag "Search", name: "", class: "btn btn-light mt-2" %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h4>Follow Us</h4>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 text-center">
+        <img src="logo.png" alt="Logo" style="max-height: 100px;">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+      </div>
+    </div>
+</footer>
