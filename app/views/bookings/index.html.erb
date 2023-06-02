@@ -1,5 +1,4 @@
 <div class="container">
-  <% if %>
   <h1 class="mb-5">Your bookings</h1>
   <div class="row">
     <% if @future_bookings.present? %>
@@ -57,7 +56,7 @@
                     <li><%= b.end_date %></li>
                   </ul>
                   <div>
-                    <%= link_to new_booking_review_path, class: "btn button btn-primary" do %>
+                    <%= link_to new_booking_review_path(b), class: "btn button btn-primary" do %>
                       <p>Add review</p>
                     <% end %>
                   </div>
@@ -70,4 +69,3 @@
     <% end %>
   </div>
 </div>
-
