@@ -5,8 +5,14 @@
 
   <div class="d-flex justify-content-between bg-white">
     <div class=" d-flex justify-content-start prop-info">
-      <p class="star-icon me-3 ms-3">  5 <i class="fa-solid fa-star"></i>  </p>
-      <p class=""> - 100 Reviews  </p>
+      <p class="star-icon me-3 ms-3">
+        <% unless @reviews.empty? %>
+          <% @avg.times do %>
+            <i class="fa-solid fa-star fa-2xs"></i>
+          <% end %>
+        <% end %>
+      </p>
+      <p class=""> <%= @reviews.count %> <%= @reviews.count == 1 ? 'Review' : 'Reviews'  %></p>
     </div>
     <div class = "icon-size d-flex justify-content-end mb-2">
       <%= link_to "#", class: "me-3" do%>
@@ -25,11 +31,13 @@
       <h2><strong>Located in </strong> <%= @property.address %></h2>
       <h2><strong>Price per Night: </strong>€ <%= @property.price_per_night %></h2>
       <h2><strong>Maximum Capacity: </strong> <%= @property.capacity %></h2>
-      <h2><%= @property.number_of_rooms %> rooms</h2>
+      <%#= @property.number_of_rooms %>
       <br>
       <div class = "d-flex">
         <%= link_to "Book",  new_property_booking_path(@property), class: "btn button btn-primary me-3"%>
-        <%= link_to "Add Review",  "#", class: "btn button-review btn-primary me-3"%>
+        <% unless Booking.where(user: current_user, property: @property).empty? %>
+          <%= link_to "Add Review",  new_booking_review_path(current_user.bookings.last), class: "btn button-review btn-primary me-3"%>
+        <% end %>
       </div >
     </div>
 
@@ -44,7 +52,7 @@
 
 
   <hr>
-
+  <br>
   <div class = "summary">
     <p> Next to our small nature campsite is a beautiful holiday home surrounded by nature.
     Jurjen has made the cottage all by herself and made sure that you can completely relax. <%#= @property.summary %></p>
@@ -60,36 +68,25 @@
   </div>
 
   <hr>
-
+  <br>
   <h1>Reviews</h1>
+  <br>
 
-  <div class="review-card my-2">
-    <%= image_tag asset_path('prof-pic1.jpg')%>
-    <div class="review-product-infos">
-      <h2>Tom</h2>
-      <p>A very comfortable property and I would highly recommend.</p>
-      <div class = "d-flex">
-        <p>5</p>
-        <i class="fa-solid fa-star"></i>
+  <% @reviews.each do |review|  %>
+    <div class="review-card my-2">
+      <%= image_tag asset_path('prof-pic1.jpg')%>
+      <div class="review-card-infos">
+        <h2><%= review.user.email.match(/^(\w|\.)*/)[0].capitalize %></h2>
+        <p><%= review.comment %></p>
+        <div class=" d-flex justify-content-start prop-info">
+          <p class="review-icon ms-1"> <% review.rating.times do %>
+            <i class="fa-solid fa-star fa-2xs"></i>
+          <% end %>
+            </p>
+
+        </div>
       </div>
     </div>
-  </div>
+<% end %>
 
-  <div class="review-card my-2">
-    <%= image_tag asset_path('prof-pic2.jpg')%>
-    <div class="review-product-infos">
-      <h2>Alex</h2>
-      <p>A very comfortable property and I would highly recommend.</p>
-      <p>5 stars</p>
-    </div>
-  </div>
-
-  <div class="review-card my-2">
-    <%= image_tag asset_path('prof-pic3.jpg')%>
-    <div class="review-product-infos">
-      <h2>Ben</h2>
-      <p>A very comfortable property and I would highly recommend.</p>
-      <p>5 stars</p>
-    </div>
-  </div>
 </div>

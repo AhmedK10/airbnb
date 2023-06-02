@@ -68,9 +68,13 @@
 }
 
 .review-card-infos {
-  padding: 16px;
+  padding: 35px;
+
+  h2 {
+    font-size: 18px;
+  }
 
   p {
-    font-size: 100px;
+    font-size: 16px;
   }
 }

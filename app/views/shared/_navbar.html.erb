@@ -35,10 +35,10 @@
             <%= link_to "My booking", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My favorites", "#", class: "nav-link" %>
+            <%= link_to "My favorites", favorites_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "user-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Àbout us", "#", class: "dropdown-item action-link" %>
               <%= link_to "Contact us", "#", class: "dropdown-item action-link" %>
