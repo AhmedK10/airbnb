@@ -33,7 +33,8 @@
       </div >
     </div>
 
-    <%= image_tag asset_path('Amsterdam_3.jpg'), class:"show-img ms-5" %>
+   <%# <%= image_tag asset_path('Amsterdam_3.jpg'), class:"show-img ms-5" %>
+    <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
 
   <%# <div class = "d-flex mt-3 align-items-center justify-content-end">
