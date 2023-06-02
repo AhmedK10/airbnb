@@ -38,7 +38,18 @@
             <%= link_to "My favorites", favorites_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "user-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+            <% if current_user.email.match(/^(\w|\.)*/)[0].capitalize == "Ahmed" %>
+              <%= image_tag "ahmed-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% elsif current_user.email.match(/^(\w|\.)*/)[0].capitalize == "Yuta" %>
+              <%= image_tag "yuta-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% elsif current_user.email.match(/^(\w|\.)*/)[0].capitalize =="Onur" %>
+              <%= image_tag "onur-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "jas-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Àbout us", "#", class: "dropdown-item action-link" %>
               <%= link_to "Contact us", "#", class: "dropdown-item action-link" %>
