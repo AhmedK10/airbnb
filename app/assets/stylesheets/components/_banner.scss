@@ -1,0 +1,21 @@
+.banner {
+  background-image: url('index_banner.jpg');
+  background-size: cover;
+  // background-position: center;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+
+
+  h2 {
+    font-family: Boston, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    height: 0;
+    color: white;
+    text-align: center;
+  }
+}
