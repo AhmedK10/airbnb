@@ -1,0 +1,13 @@
+<div class="container">
+	
+
+<%= simple_form_for @property do |f|%>
+  <%= f.input :title, input_html: {class:"rounded w-50"} %>
+  <%= f.input :capacity, input_html: {class:"rounded w-50"} %>
+  <%= f.input :address, input_html: {class:"rounded w-50"} %>
+  <%= f.input :summary, input_html: {class:"rounded w-50"} %>
+  <%= f.input :price_per_night, input_html: {class:"rounded w-50"} %>
+  <%= f.input :number_of_rooms, input_html: {class:"rounded w-50"} %>
+  <%= f.input :single_room %> 
+ "<%= f.button :submit, "Submit", class: "button"%>
+<% end %>

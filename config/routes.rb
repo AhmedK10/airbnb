@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :properties, only: %i[index show] do
+  resources :properties, only: %i[index show new create] do
     resources :bookings, only: %i[index new create] 
   end
   resources :favorites, only: %i[index create]
