@@ -9,6 +9,16 @@
   </div>
 
   <div class="grid">
+  <% @destinations.each do |destination| %>
+    <div class="card">
+      <%= link_to property_path(destination) do %>
+        <div class="card-img" style="background-image: url(<%= asset_path('Amsterdam_3.jpg') %>)"></div>
+      <% end %>
+      <div class="card-infos">
+        <div>
+          <h3><%= destination.title %></h3>
+          <%= destination.address %>
+          <%#= destination.capacity %>
     <% @destinations.each do |destination| %>
       <div class="card">
         <%= link_to property_path(destination) do %>
