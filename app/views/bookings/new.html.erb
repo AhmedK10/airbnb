@@ -1,7 +1,21 @@
-<h1>Details of your stay</h1>
-<%= simple_form_for [@property, @booking] do |f| %>
-  <%= f.input :start_date, placeholder: 'Start date' %>
-  <%= f.input :end_date, placeholder: 'End date'%>
-  <%= f.input :number_of_guests, placeholder: 'How many people'%>
-  <%= f.submit class: "btn btn-flat" %>
-<% end %>
+<div class="container">
+  <div class="img-new">
+    <div class="row">
+      <div class="col-md-6 form-section">
+        <h1>Details of your stay</h1>
+        <%= simple_form_for [@property, @booking] do |f| %>
+          <%= f.input :start_date, placeholder: 'Start date', html5: true %>
+          <%= f.input :end_date, placeholder: 'End date', html5: true %>
+          <%= f.input :number_of_guests, placeholder: 'How many people'%>
+          <%= f.submit class: "btn btn-primary button" %>
+        <% end %>
+      </div>
+      <div class="img-card col-md-3">
+        <%= image_tag "img_2.jpg", alt: "travel" %>
+      </div>
+      <div class="img-card col-md-3">
+        <%= image_tag "img_4.jpg", alt: "travel" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,11 +18,19 @@
 }
 
 .button {
+  width: 150px;
+  padding-top: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  background-color: #F95959;
+}
+
+.button {
   width: 120px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 8px;
   color: white;
   font-weight: bold;
-  background-color: #F95959;
 }

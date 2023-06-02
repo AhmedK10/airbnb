@@ -12,7 +12,7 @@
     <% @destinations.each do |destination| %>
       <div class="card">
         <%= link_to property_path(destination) do %>
-          <div class="card-img" style="background-image: url(<%= asset_path('Amsterdam_3.jpg') %>)"></div>
+          <div class="card-img" style="background-image: url(<%= cl_image_path destination.photo.key %>)"></div>
         <% end %>
         <div class="card-infos">
           <div>

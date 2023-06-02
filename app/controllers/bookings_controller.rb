@@ -2,7 +2,9 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @past_bookings = Booking.where(user: current_user, end_date: ...Date.today)
+    @future_bookings = Booking.where(user: current_user, start_date: Date.today + 1..)
+    @ongoing_bookings = Booking.where(user: current_user, start_date: ..Date.today, end_date: Date.today + 1..)
   end
 
   def new
@@ -22,7 +24,6 @@ class BookingsController < ApplicationController
     @booking.property = @property
     @booking.total_price = @property.price_per_night * days
     @booking.status = "confirmed"
-
     if @booking.save
       redirect_to property_path(@property), notice: "Booked Successfully!"
     else
