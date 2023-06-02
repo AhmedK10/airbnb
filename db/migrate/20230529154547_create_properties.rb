@@ -8,6 +8,7 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.string :type
       t.references :user, foreign_key: true
       t.integer :number_of_rooms
+      t.string :properties
 
       t.timestamps
     end
