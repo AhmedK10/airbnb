@@ -13,6 +13,9 @@ gem "rails", "~> 7.0.5"
 gem "sprockets-rails"
 
 gem "dotenv-rails", groups: [:development, :test]
+##FAKER
+gem "faker"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -21,6 +24,10 @@ gem "puma", "~> 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
+
+gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"

@@ -19,6 +19,11 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @reviews = @property.reviews
+    unless @reviews.empty?
+      ratings = @reviews.pluck(:rating)
+      @avg = (ratings.sum / ratings.length).round
+    end
   end
 
   def new
