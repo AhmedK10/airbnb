@@ -25,4 +25,25 @@ class PropertiesController < ApplicationController
       @avg = (ratings.sum / ratings.length).round
     end
   end
+
+  def new
+    @property = Property.new
+  end
+
+  def create
+    @property = Property.new(property_params)
+    @property.user = current_user
+
+    if @property.save
+      redirect_to property_path(@property)
+    else 
+      render :new, status: :unprocessable_entity
+    end
+  end
+  
+  private
+
+  def property_params #strong params
+    params.require(:property).permit(:title, :capacity, :address, :summary, :price_per_night, :number_of_rooms, :single_room, :photo)
+  end
 end

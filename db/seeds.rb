@@ -1,4 +1,5 @@
 require 'faker'
+require 'open-uri'
 
 puts 'Cleaning database...'
 
@@ -86,7 +87,7 @@ onur = User.create!(
   puts 'Creating Properties...'
 
   20.times do
-    Property.create!(
+    property = Property.new(
       capacity: rand(1..10),
       address: cities.sample.capitalize,
       summary: property_summaries.sample,
@@ -95,6 +96,10 @@ onur = User.create!(
       single_room: [true, false].sample,
       title: titles.sample
     )
+
+    file = URI.open("https://source.unsplash.com/random/900x900/?living%20room")
+    property.photo.attach(io: file, filename: "#{property.address}.jpg", content_type: "image/jpeg")
+    property.save!
 
     #BOOKING:
     puts 'Creating Bookings....'
