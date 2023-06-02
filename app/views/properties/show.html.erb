@@ -41,10 +41,8 @@
       </div >
     </div>
 
-
-    <%= image_tag asset_path("Amsterdam_3"), class:"show-img ms-5" %>
+    <%= cl_image_tag @property.photo.key, class:"show-img ms-5" %>
   </div>
-
 
   <hr>
   <br>
