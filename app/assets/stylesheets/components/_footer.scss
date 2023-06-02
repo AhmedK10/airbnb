@@ -25,12 +25,18 @@ h4, p {
   color: $primary;
 }
 
+.social-icons li i:hover {
+  color: white;
+}
+
+
 .footer-link {
   color: white;
 }
 
 .footer-link:hover {
   color: $primary;
+  font-weight: bolder;
 }
 
 .row {
