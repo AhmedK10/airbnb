@@ -87,6 +87,7 @@ onur = User.create!(
   puts 'Creating Properties...'
 
   20.times do
+    sleep(2)
     property = Property.new(
       capacity: rand(1..10),
       address: cities.sample.capitalize,
