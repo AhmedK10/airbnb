@@ -33,10 +33,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My booking", "#", class: "nav-link" %>
+            <%= link_to "My booking", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My favorites", favorites_path, class: "nav-link" %>
+            <%= link_to "Add Property", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
 
@@ -54,7 +54,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Àbout us", "#", class: "dropdown-item action-link" %>
               <%= link_to "Contact us", "#", class: "dropdown-item action-link" %>
-              <%= link_to "Log out", "#", class: "dropdown-item action-link", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item action-link", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>
