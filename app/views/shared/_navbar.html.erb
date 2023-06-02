@@ -7,23 +7,24 @@
       </div>
     <% end %>
 
-<div class="row justify-content-center">
-  <div class="col-sm-12 my-6">
-    <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination", style: "margin-right: 10px;" %>
-      <%= select_tag :max_price,
-        options_for_select(
-          [["Max Price", "", disabled: true, selected: true]] +
-          [50, 150, 200, 250, 300, 350, 400, "> 400"].map { |price| ["#{price} €", price] },
-          params[:max_price]
-        ),
-        class: "form-control smaller-input",
-        style: "margin-right: 10px;"
-      %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary btn-white" %>
-    <% end %>
-  </div>
-</div>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 my-6">
+        <%= form_with url: properties_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search destination", style: "margin-right: 10px;" %>
+          <%= select_tag :max_price,
+            options_for_select(
+              [["Max Price", "", disabled: true, selected: true]] +
+              [50, 150, 200, 250, 300, 350, 400, "> 400"].map { |price| ["#{price} €", price] },
+              params[:max_price]
+            ),
+            class: "form-control smaller-input",
+            style: "margin-right: 10px;"
+          %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary btn-white" %>
+        <% end %>
+      </div>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
