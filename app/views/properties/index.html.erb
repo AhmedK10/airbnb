@@ -1,15 +1,3 @@
-
-<div class="grid">
-  <% @properties.each do |property| %>
-    <div class="card">
-      <%= link_to property_path(property) do %>
-        <div class="card-img" style="background-image: url(<%= asset_path('Amsterdam_3.jpg') %>)"></div>
-      <% end %>
-      <div class="card-infos">
-        <div>
-          <h3><%= property.title %></h3>
-          <%= property.address %>
-          <%#= property.capacity %>
 <div class="banner">
   <h2>Book your dream holiday with ease on our website.</h2>
 </div>
@@ -25,7 +13,6 @@
           <div>
             <h3><%= property.title %></h3>
             <%= property.address %>
-            <%= property.capacity %>
           </div>
           <h3>€ <%= property.price_per_night %></h3>
         </div>
