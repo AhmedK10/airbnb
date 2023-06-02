@@ -41,18 +41,18 @@
           <li class="nav-item dropdown">
 
             <% if current_user.email.match(/^(\w|\.)*/)[0].capitalize == "Ahmed" %>
-              <%= image_tag "ahmed-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "ahmed-pic.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% elsif current_user.email.match(/^(\w|\.)*/)[0].capitalize == "Yuta" %>
-              <%= image_tag "yuta-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "yuta-pic.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% elsif current_user.email.match(/^(\w|\.)*/)[0].capitalize =="Onur" %>
-              <%= image_tag "onur-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "onur-pic.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-              <%= image_tag "jas-pic", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "jas-pic.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
 
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Àbout us", "#", class: "dropdown-item action-link" %>
+              <%= link_to "About us", "#", class: "dropdown-item action-link" %>
               <%= link_to "Contact us", "#", class: "dropdown-item action-link" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item action-link", data: {turbo_method: :delete} %>
             </div>
