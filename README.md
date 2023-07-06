@@ -27,7 +27,7 @@ Link : <a href="https://airbnb-ahmedk10.herokuapp.com/" target="_blank">https://
 
 ## Description
 
-<p align="center">This is a clone of the famous property booker: Airbnb. The aim was to create an Airbnb like user expereinece using Ruby on Rails in a platform that allows you to book a property, add a property, leave a review & rating after a stay.</p>
+<p align="center">This is a clone of the famous property booker: Airbnb. The aim was to create an Airbnb-like user experience using Ruby on Rails in a platform that allows you to book a property, add a property, leave a review, and rating after a stay.</p>
 
 
 ## Tools Used
